@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var Cacdoibong = [
+  { "Name": "Arsenal", "points": 99, "GD": 45, "position": null },
+  { "Name": "Chelsea", "points": 75, "GD": 39, "position": null },
+  { "Name": "Manchester United", "points": 60, "GD": 29, "position": null },
+  { "Name": "Liverpool", "points": 88, "GD": 39, "position": null },
+];
+
+Cacdoibong.sort(function(a,b){ return b.points - a.points; });
+
+Cacdoibong.forEach(function(player, i, arr) {
+  player.rank = i === 0 || player.points != arr[i-1].points
+              ? i + 1
+              : arr[i-1].rank;
+});
+
+console.log(Cacdoibong);
+</script>   

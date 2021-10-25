@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+A1 = [1, 2, "a"];
+A2 = [1, 3, "b"];
+function difference(arr1, arr2) {
+        diff_array = []
+        for (var i = 0; i < arr1.length; i++) {
+            var is_in = false
+            for (var y = 0; y < arr2.length; y++) {
+                if (arr1[i] === arr2[y]) {
+                    is_in = true
+                }
+            }
+            if (is_in === false) {
+                diff_array.push(arr1[i])
+            }
+        }
+        for (var i = 0; i < arr2.length; i++) {
+            var is_in_2 = false
+            for (var y = 0; y < arr1.length; y++) {
+                if (arr2[i] === arr1[y]) {
+                    is_in_2 = true
+                }
+            }
+            if (is_in_2 === false) {
+                diff_array.push(arr2[i])
+            }
+        }
+        return diff_array
+    }
+ console.log(difference(A1, A2));
+</script>
